@@ -10,7 +10,7 @@ export default {
   methods: {
     getApi() {
       axios
-        .get("http://localhost:5174/api/projects")
+        .get("http://127.0.0.1:8000/api/projects")
         .then((result) => {
           this.projects = result.data.data;
         })
