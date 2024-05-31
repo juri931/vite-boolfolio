@@ -1,0 +1,10 @@
+#app {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 30px;
+  gap: 50px;
+  p {
+    padding: 10px 0;
+  }
+}

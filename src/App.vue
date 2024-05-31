@@ -40,15 +40,22 @@ export default {
 <template>
   <div class="main-wrapper">
     <h1>Boolfolio Home</h1>
-    <div class="container" v-if="!loader">
-      <h3>I miei progetti:</h3>
+    <h3>I miei progetti:</h3>
+    <div class="projects-container" v-if="!loader">
+      <div id="app">
+        <ProjectCard
+          v-for="project in projects"
+          :key="project.id"
+          :project="project"
+        />
+      </div>
 
-      <ul>
+      <!-- <ul>
         <li v-for="project in projects" :key="project.id">
           {{ project.id }} -
           {{ project.name }}
         </li>
-      </ul>
+      </ul> -->
     </div>
 
     <p v-else>Carico...</p>
@@ -59,4 +66,6 @@ export default {
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import "./src/assets/scss/_projectCard.scss";
+</style>
