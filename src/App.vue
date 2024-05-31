@@ -5,7 +5,7 @@ export default {
   methods: {
     getApi() {
       axios
-        .get("http://127.0.0.1:8000/api/projects")
+        .get("http://localhost:5174/api/projects")
         .then((result) => {
           console.log(result.data);
         })
