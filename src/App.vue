@@ -28,6 +28,10 @@ export default {
 <template>
   <div class="main-wrapper">
     <h1>Boolfolio Home</h1>
+    <h5>I miei progetti:</h5>
+    <ul>
+      <li v-for="project in projects" :key="project.id">{{ project.title }}</li>
+    </ul>
   </div>
 </template>
 
