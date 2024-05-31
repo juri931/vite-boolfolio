@@ -33,7 +33,7 @@ export default {
   <div class="main-wrapper">
     <h1>Boolfolio Home</h1>
     <div class="container" v-if="!loader">
-      <h5>I miei progetti:</h5>
+      <h3>I miei progetti:</h3>
       <ul>
         <li v-for="project in projects" :key="project.id">
           {{ project.id }} -
