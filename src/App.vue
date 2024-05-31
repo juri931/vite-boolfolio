@@ -1,5 +1,6 @@
 <script>
 import axios from "axios";
+import { store } from "./data/store";
 
 export default {
   data() {
@@ -11,7 +12,7 @@ export default {
   methods: {
     getApi() {
       axios
-        .get("http://127.0.0.1:8000/api/projects")
+        .get(store.apiUrl)
         .then((result) => {
           this.loader = false;
           this.projects = result.data.data;
