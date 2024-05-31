@@ -2,12 +2,17 @@
 import axios from "axios";
 
 export default {
+  data() {
+    return {
+      projects: [],
+    };
+  },
   methods: {
     getApi() {
       axios
         .get("http://localhost:5174/api/projects")
         .then((result) => {
-          console.log(result.data);
+          this.projects = result.data.data;
         })
         .catch((error) => {
           console.log(error);
