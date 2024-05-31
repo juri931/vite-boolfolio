@@ -7,6 +7,7 @@ export default {
     return {
       projects: [],
       loader: true,
+      error: false,
     };
   },
   methods: {
@@ -20,7 +21,8 @@ export default {
         })
         .catch((error) => {
           this.loader = false;
-          console.log(error);
+          console.log(error.message);
+          this.error = error.message;
         });
     },
   },
@@ -42,7 +44,12 @@ export default {
         </li>
       </ul>
     </div>
+
     <p v-else>Carico...</p>
+
+    <div v-if="error">
+      <h2>{{ error }}</h2>
+    </div>
   </div>
 </template>
 
