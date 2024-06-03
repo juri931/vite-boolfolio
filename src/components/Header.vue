@@ -8,7 +8,11 @@ export default {
   <header>
     <nav>
       <ul>
-        <li><router-link :to="{ name: 'home' }">Home</router-link></li>
+        <li><router-link :to="{ name: 'home' }">Projects</router-link></li>
+        <li><router-link :to="{ name: 'types' }">Types</router-link></li>
+        <li>
+          <router-link :to="{ name: 'technologies' }">Technologies</router-link>
+        </li>
       </ul>
     </nav>
   </header>

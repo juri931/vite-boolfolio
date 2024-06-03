@@ -2,11 +2,13 @@
 import axios from "axios";
 import { store } from "./data/store";
 import ProjectCard from "./components/ProjectCard.vue";
+import Header from "./components/Header.vue";
 
 export default {
   name: "App",
   components: {
     ProjectCard,
+    Header,
   },
   data() {
     return {
@@ -39,6 +41,14 @@ export default {
 
 <template>
   <div class="main-wrapper">
+    <div class="container">
+      <Header />
+    </div>
+
+    <div class="container">
+      <router-view></router-view>
+    </div>
+
     <h1>Boolfolio Home</h1>
     <h3>I miei progetti:</h3>
     <div class="projects-container" v-if="!loader">

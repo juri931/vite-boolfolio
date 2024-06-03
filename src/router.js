@@ -11,6 +11,16 @@ const router = createRouter({
       component: "Home",
     },
     {
+      path: "/types",
+      name: "types",
+      component: "Types",
+    },
+    {
+      path: "/technologies",
+      name: "technologies",
+      component: "Technologies",
+    },
+    {
       path: "/:pathMatch(.*)*",
       name: "error404",
       component: "Error404",
