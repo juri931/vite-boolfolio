@@ -14,6 +14,7 @@ export default {
   data() {
     return {
       projects: [],
+      paginator: [],
       loader: true,
       error: false,
     };
@@ -25,7 +26,10 @@ export default {
         .then((result) => {
           this.loader = false;
           this.projects = result.data.data;
-          console.log(this.projects);
+          this.paginator.current_page = result.data.current_page;
+          this.paginator.links = result.data.links;
+          this.paginator.total = result.data.total;
+          console.log(this.paginator);
         })
         .catch((error) => {
           this.loader = false;
