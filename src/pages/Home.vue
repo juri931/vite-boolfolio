@@ -1,11 +1,14 @@
 <script>
 import axios from "axios";
 import { store } from "../data/store";
+
+import Header from "@/components/Header.vue";
 import ProjectCard from "../components/ProjectCard.vue";
 
 export default {
   name: "App",
   components: {
+    Header,
     ProjectCard,
   },
   data() {
@@ -38,6 +41,10 @@ export default {
 </script>
 
 <template>
+  <div class="container">
+    <Header />
+  </div>
+
   <div class="main-wrapper">
     <h1>Boolfolio Home</h1>
     <h3>I miei progetti:</h3>
@@ -49,13 +56,6 @@ export default {
           :project="project"
         />
       </div>
-
-      <!-- <ul>
-        <li v-for="project in projects" :key="project.id">
-          {{ project.id }} -
-          {{ project.name }}
-        </li>
-      </ul> -->
     </div>
 
     <p v-else>Carico...</p>

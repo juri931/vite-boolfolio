@@ -49,13 +49,6 @@ export default {
           :project="project"
         />
       </div>
-
-      <!-- <ul>
-        <li v-for="project in projects" :key="project.id">
-          {{ project.id }} -
-          {{ project.name }}
-        </li>
-      </ul> -->
     </div>
 
     <p v-else>Carico...</p>
