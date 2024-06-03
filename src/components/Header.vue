@@ -14,4 +14,27 @@ export default {
   </header>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+header {
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    li {
+      list-style: none;
+      a {
+        text-decoration: none;
+        padding: 0 20px;
+        text-transform: uppercase;
+        &:hover {
+          text-decoration: underline;
+        }
+        &.active {
+          color: yellow;
+        }
+      }
+    }
+  }
+}
+</style>

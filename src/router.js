@@ -3,6 +3,7 @@ import Home from "./pages/Home.vue";
 
 const router = createRouter({
   history: createWebHistory(),
+  linkExactActiveClass: "active",
   routes: [
     {
       path: "/",

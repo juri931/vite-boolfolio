@@ -41,11 +41,15 @@ export default {
 </script>
 
 <template>
-  <div class="container">
-    <Header />
-  </div>
-
   <div class="main-wrapper">
+    <div class="container">
+      <Header />
+    </div>
+
+    <div class="container">
+      <router-view></router-view>
+    </div>
+
     <h1>Boolfolio Home</h1>
     <h3>I miei progetti:</h3>
     <div class="projects-container" v-if="!loader">
