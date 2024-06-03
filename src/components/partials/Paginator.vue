@@ -6,7 +6,7 @@ export default {
   },
   methods: {
     callApi(link) {
-      console.log(link);
+      this.$emit("callApi", link);
     },
   },
 };

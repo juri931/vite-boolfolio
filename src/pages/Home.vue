@@ -12,6 +12,7 @@ export default {
   components: {
     Header,
     ProjectCard,
+    Paginator,
   },
   data() {
     return {
@@ -22,16 +23,18 @@ export default {
     };
   },
   methods: {
-    getApi() {
+    callApi() {
+      console.log("emit");
+    },
+    getApi(apiUrl) {
       axios
-        .get(store.apiUrl)
+        .get(apiUrl)
         .then((result) => {
           this.loader = false;
           this.projects = result.data.data;
-          this.paginator.current_page = result.data.current_page;
-          this.paginator.links = result.data.links;
-          this.paginator.total = result.data.total;
-          console.log(this.paginator);
+          this.paginatorData.current_page = result.data.current_page;
+          this.paginatorData.links = result.data.links;
+          this.paginatorData.total = result.data.total;
         })
         .catch((error) => {
           this.loader = false;
@@ -41,7 +44,7 @@ export default {
     },
   },
   mounted() {
-    this.getApi();
+    this.getApi(store.apiUrl);
   },
 };
 </script>
@@ -66,7 +69,7 @@ export default {
           :project="project"
         />
 
-        <Paginator :data="paginatorData" />
+        <Paginator :data="paginatorData" @callApi="getApi" />
       </div>
     </div>
 
