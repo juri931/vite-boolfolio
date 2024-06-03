@@ -5,6 +5,8 @@ import { store } from "../data/store";
 import Header from "@/components/Header.vue";
 import ProjectCard from "../components/ProjectCard.vue";
 
+import Paginator from "../components/partials/Paginator.vue";
+
 export default {
   name: "App",
   components: {
@@ -14,7 +16,7 @@ export default {
   data() {
     return {
       projects: [],
-      paginator: [],
+      paginatorData: {},
       loader: true,
       error: false,
     };
@@ -63,6 +65,8 @@ export default {
           :key="project.id"
           :project="project"
         />
+
+        <Paginator :data="paginatorData" />
       </div>
     </div>
 
