@@ -14,8 +14,9 @@ export default {
       axios
         .get(store.apiUrl)
         .then((result) => {
-          console.log(result.data);
+          console.log(result.data.data);
           this.technologies = result.data.data;
+          console.log(this.technologies);
         })
         .catch((error) => {
           console.log(error.message);
@@ -33,7 +34,11 @@ export default {
     <h1>Tecnologie</h1>
     <ul>
       <li v-for="technology in technologies" :key="technology.id">
-        {{ technology.name }}
+        <ul>
+          <li v-for="tech in technology.technologies" :key="tech.id">
+            {{ tech.name }}
+          </li>
+        </ul>
       </li>
     </ul>
   </div>

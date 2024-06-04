@@ -20,6 +20,7 @@ export default {
 
 <style lang="scss" scoped>
 header {
+  background-color: red;
   ul {
     display: flex;
     justify-content: center;
