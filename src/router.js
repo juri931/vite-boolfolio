@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "./pages/Home.vue";
 import Types from "./pages/Types.vue";
 import Technologies from "./pages/Technologies.vue";
+import Error404 from "./pages/Error404.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -10,22 +11,22 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: "Home",
+      component: Home,
     },
     {
       path: "/types",
       name: "types",
-      component: "Types",
+      component: Types,
     },
     {
       path: "/technologies",
       name: "technologies",
-      component: "Technologies",
+      component: Technologies,
     },
     {
       path: "/:pathMatch(.*)*",
       name: "error404",
-      component: "Error404",
+      component: Error404,
     },
   ],
 });
