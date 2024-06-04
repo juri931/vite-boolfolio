@@ -15,7 +15,7 @@ export default {
         .get(store.apiUrl)
         .then((result) => {
           console.log(result.data);
-          this.types = result.data.data;
+          this.technologies = result.data.data;
         })
         .catch((error) => {
           console.log(error.message);
